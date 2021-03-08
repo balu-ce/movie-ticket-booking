@@ -15,7 +15,7 @@ import {
 } from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
-import {MongoDataSource} from './datasources';
+import {MongoDataSource, MySqlDataSource} from './datasources';
 import {RedisDataSource} from './datasources/redis.datasource';
 import {MySequence} from './sequence';
 
@@ -45,8 +45,8 @@ export class TicketBookingApplication extends BootMixin(
       .inScope(BindingScope.SINGLETON);
 
     // Bind datasource
-    //this.bind('so.datasources.mysql').toClass(MySqlDataSource)
-    //.inScope(BindingScope.SINGLETON);
+    this.bind('so.datasources.mysql').toClass(MySqlDataSource)
+      .inScope(BindingScope.SINGLETON);
 
     // Bind datasource
     //this.dataSource(MySqlDataSource, UserServiceBindings.DATASOURCE_NAME);

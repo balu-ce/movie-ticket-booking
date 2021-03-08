@@ -97,11 +97,10 @@ export class TransactionController {
       const key = user_id + '_' + ran_no + '_' + now;
       await this.paymentRepository.set(key, payment_obj)
       await this.paymentRepository.expire(key, 120000)
-      console.log(await this.paymentRepository.get(key))
-      //tx.rollback();
       this.verifyPayment(tx, key);
       const res = filter;
       filter["booking_id"] = key;
+      delete filter["booking_status"]
       return filter;
     }
     else {
