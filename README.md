@@ -1,79 +1,42 @@
-# ticket-booking
+# Database
 
-This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
-[initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
+1. MongoDb - Our DB
+2. MySql - Theatre Database(owned by client)
+3. Redis - To maintain payment Cache
 
-## Install dependencies
+Mongo DB(no auth)
+-----------------------------------------------------------------------
+1. Import Movies theatre.mongo_collection.json into mongodb
 
-By default, dependencies were installed when this application was generated.
-Whenever dependencies in `package.json` are changed, run the following command:
+MySQL(Auth - Client Credentials)
+---------------------------------------------------------------------
+1. SET innodb_lock_wait_timeout = 5 (to set transaction waiting state to 5 sec)
+2. Import the mysql client_db.sql
 
-```sh
-npm install
-```
+Redis(no auth)
+----------------------------------------------------------------------
+1. Install redis
 
-To only install resolved dependencies in `package-lock.json`:
+Web Service
+----------------------------------------------------------------------
+1. npm  install
+2. To Change MySQL user and pass edit /src/datasources/my-sql.datasource.ts
+3. npm start
 
-```sh
-npm ci
-```
+Testing Service
+------------------------------------------------------------------------
+1. Import Postman Collection superops.postman_collection.json into post man
+2. Test the following services
 
-## Run the application
+    - SignUp
+    - Find Theatre(No Auth)
+    - Login - Retrive Token
+    - Select Show (Auth) - Bearer Token
+    - Select Seat (Auth) - Bearer Token
+    - Seat Booking(Auth) - Bearer Token
+    - Payment and Dispatch(Auth) - Bearer Token
 
-```sh
-npm start
-```
+Load Balacing
+--------------------------------------------------------------------------
+1. Not Implemented load balancing , we can use kubernetes or ECS services in AWS
 
-You can also run `node .` to skip the build step.
-
-Open http://127.0.0.1:3000 in your browser.
-
-## Rebuild the project
-
-To incrementally build the project:
-
-```sh
-npm run build
-```
-
-To force a full build by cleaning up cached artifacts:
-
-```sh
-npm run clean
-npm run build
-```
-
-## Fix code style and formatting issues
-
-If `eslint` and `prettier` are enabled for this project, you can use the
-following commands to check code style and formatting issues.
-
-```sh
-npm run lint
-```
-
-To automatically fix such issues:
-
-```sh
-npm run lint:fix
-```
-
-## Other useful commands
-
-- `npm run migrate`: Migrate database schemas for models
-- `npm run openapi-spec`: Generate OpenAPI spec into a file
-- `npm run docker:build`: Build a Docker image for this application
-- `npm run docker:run`: Run this application inside a Docker container
-
-## Tests
-
-```sh
-npm test
-```
-
-## What's next
-
-Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
-understand how you can continue to add features to this application.
-
-[![LoopBack](<https://github.com/strongloop/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png>)](http://loopback.io/)
