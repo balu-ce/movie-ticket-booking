@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "60447a9669306360a9e162ae"
+  },
+  "city": "chennai",
+  "theatres": [
+    {
+      "theatre_name": "Sathyam",
+      "theatre_db_conn_id": "sathyam_db",
+      "movies": [
+        {
+          "movie_name": "master",
+          "movie_rating": 3
+        },
+        {
+          "movie_name": "avengers",
+          "movie_rating": 5
+        }
+      ]
+    },
+    {
+      "theatre_name": "PVR",
+      "theatre_db_conn_id": "pvr_db",
+      "movies": [
+        {
+          "movie_name": "master",
+          "movie_rating": 3
+        },
+        {
+          "movie_name": "avengers",
+          "movie_rating": 5
+        }
+      ]
+    },
+    {
+      "theatre_name": "Devi",
+      "theatre_db_conn_id": "devi_db",
+      "movies": [
+        {
+          "movie_name": "master",
+          "movie_rating": 3
+        },
+        {
+          "movie_name": "avengers",
+          "movie_rating": 5
+        }
+      ]
+    },
+    {
+      "theatre_name": "INOX",
+      "theatre_db_conn_id": "inox_db",
+      "movies": [
+        {
+          "movie_name": "master",
+          "movie_rating": 3
+        },
+        {
+          "movie_name": "avengers",
+          "movie_rating": 5
+        }
+      ]
+    }
+  ]
+}]

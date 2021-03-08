@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "783209fb-a4ce-4a4e-a22d-9835283328b4",
+		"name": "superops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"bala@gmail.com\",\n\t\"password\":\"12345678\"\n}"
+				},
+				"url": "localhost:3000/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"bala@gmail.com\",\n\t\"password\":\"12345678\"\n}"
+				},
+				"url": "localhost:3000/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Find Theatres",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"city\": \"chennai\"\n}"
+				},
+				"url": "localhost:3000/superops/findbyTheatres"
+			},
+			"response": []
+		},
+		{
+			"name": "Select Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViOWY1ZWRkLWNlNDQtNDIxOC05MGI1LTQyZmY1ODIyMWM1NyIsImVtYWlsIjoiYmFsYUBnbWFpbC5jb20iLCJpYXQiOjE2MTUxNzM4MjQsImV4cCI6MTYxNTE5NTQyNH0.N4agQbJcrVtBK3KBjr9Gjb-sH2QQsJJWe84_pYJfM78"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"movie_name\": \"master\",\n  \"theatre_name\": \"Sathyam\",\n  \"city\": \"chennai\"\n}"
+				},
+				"url": "localhost:3000/superops/available_shows"
+			},
+			"response": []
+		},
+		{
+			"name": "Select Seat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViOWY1ZWRkLWNlNDQtNDIxOC05MGI1LTQyZmY1ODIyMWM1NyIsImVtYWlsIjoiYmFsYUBnbWFpbC5jb20iLCJpYXQiOjE2MTUxNzM4MjQsImV4cCI6MTYxNTE5NTQyNH0.N4agQbJcrVtBK3KBjr9Gjb-sH2QQsJJWe84_pYJfM78"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"movie_name\": \"master\",\n  \"theatre_name\": \"Sathyam\",\n  \"city\": \"chennai\",\n  \"show_dt\":\"2021-03-07 12:00:00\",\n  \"show_time\":\"11:30\"\n}"
+				},
+				"url": "localhost:3000//superops/select_seats"
+			},
+			"response": []
+		},
+		{
+			"name": "Seat Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"movie_name\": \"master\",\n  \"theatre_name\": \"Sathyam\",\n  \"city\": \"chennai\",\n  \"show_dt\":\"2021-03-07 12:00:00\",\n  \"show_time\":\"11:30\"\n}"
+				},
+				"url": "localhost:3000/superops/booking_seat"
+			},
+			"response": []
+		},
+		{
+			"name": "Payment and Dispatch",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViOWY1ZWRkLWNlNDQtNDIxOC05MGI1LTQyZmY1ODIyMWM1NyIsImVtYWlsIjoiYmFsYUBnbWFpbC5jb20iLCJpYXQiOjE2MTUxNzM4MjQsImV4cCI6MTYxNTE5NTQyNH0.N4agQbJcrVtBK3KBjr9Gjb-sH2QQsJJWe84_pYJfM78"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movie_name\": \"master\",\n    \"theatre_name\": \"Sathyam\",\n    \"city\": \"chennai\",\n    \"show_dt\": \"2021-03-07T06:30:00.000Z\",\n    \"show_time\": \"11:30\",\n    \"seat_no\": [\n            \"A4\",\n            \"A5\"\n        ],\n    \"booking_id\": \"eb9f5edd-ce44-4218-90b5-42ff58221c57_69_1615177021314\"\n}"
+				},
+				"url": "localhost:3000/payment_gateway"
+			},
+			"response": []
+		}
+	]
+}
